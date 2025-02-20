@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -128,7 +129,7 @@
           <p>Gender:${g}</p>
           <p>Date of Birth:${dob}</p>
           <button>Confirm</button>
-          <button>Edit</button>
+          <button onclick="showForm()">Edit</button>
         </div>
         `;
         root.innerHTML = str;
@@ -193,8 +194,29 @@
       </div>
       `;
         root.innerHTML = str;
+        funDate();
       };
-
+      function funDate=()=>{
+        let str = "";
+        let dt = new Date()
+        let d = dt.getDate()
+        let m = dt.getMonth()
+        let y = dt.getFullYear()
+        for (let i = 1; i <= 31; i++) {
+          str += `<option ${i === d && "selected"}>${i}</option>`;
+        }
+        day.innerHTML = str;
+        str = "";
+        for (let i = 0; i <= 11; i++) {
+          str += `<option ${i === m && "selected"}>${months[i]}</option>`;
+        }
+        month.innerHTML = str;
+        str = "";
+        for (let i = 1905; i <= 2025; i++) {
+          str += `<option ${i === y && "selected"}>${i}</option>`;
+        }
+        year.innerHTML = str;
+      }
       showForm();
       let str = "";
       let dt = new Date()
