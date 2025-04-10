@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="path/to/your/favicon.ico">
+
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        let name="John"
+        function Header(){
+            return "<h1>Hello world</h1>"
+        }
+        function Main(){
+            return `<h1>Hey... ${name}!! This is main content</h1>`
+        }
+        function footer(){
+            return "<h2>Footer</h2>"
+        }
+        root.innerHTML=Header()+Main()+footer()
+        </script>
+</body>
+</html>
